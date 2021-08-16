@@ -60,10 +60,15 @@ function checkGuess() {
       tooLowMessage.style.display = '';
     }
 //When number of attempted guesses = 4, display a new message that says "You have one guess remaining"
+    
     const remainingAttempts = maxNumberOfAttempts - attempts;
-
-    numberOfGuessesMessage.style.display = '';
-    numberOfGuessesMessage.innerHTML = `You guessed ${guess}. <br> ${remainingAttempts} guesses remaining`;
+    if (remainingAttempts === 1) {
+      numberOfGuessesMessage.style.display = '';
+      numberOfGuessesMessage.innerHTML = `You guessed ${guess}. <br> ${remainingAttempts} guess remaining`;
+    } else {
+      numberOfGuessesMessage.style.display = '';
+      numberOfGuessesMessage.innerHTML = `You guessed ${guess}. <br> ${remainingAttempts} guesses remaining`;
+    }
   }
 
   if (attempts === maxNumberOfAttempts) {
